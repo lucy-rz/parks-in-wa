@@ -1,4 +1,4 @@
-const Park = require('../modles/movie');
+const Park = require('../models/park');
 
 module.exports = {
     create,

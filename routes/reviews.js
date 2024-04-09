@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const reviewsCtrl = require('../controller/reviews');
+const reviewsCtrl = require('../controllers/reviews');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.post('/parks/:id/reviews', ensureLoggedIn, reviewsCtrl.create);

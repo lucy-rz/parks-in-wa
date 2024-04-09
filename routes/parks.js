@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const parksCtrl = require('../controller/parks');
+const parksCtrl = require('../controllers/parks');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', parksCtrl.index);
