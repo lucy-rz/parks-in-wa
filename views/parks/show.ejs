@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 
     <section id="show-page">
-        <div>Park: </div>
-
+        <div>Park: <%= park.parkName %></div>
+        <div>Park code: <%= park.parkCode %></div>
+        <div>
+            <img src="<%= park.parkImage %>">
+        </div>
     </section>
 
-    <form id="redirect-to-new-park" action= '/parks/<%= park._id %>/parks/new' method="GET">
-        <button type="submit">Add Park</button>
-    </form>
-                <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
