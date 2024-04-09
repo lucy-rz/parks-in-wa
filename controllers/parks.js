@@ -1,4 +1,5 @@
 const Park = require('../models/park');
+require('dotenv').config();
 
 module.exports = {
     index,
@@ -15,7 +16,10 @@ async function index(req, res) {
 async function show(req, res) {
     try {
     const park = await Park.findById(req.params.id);
-    
+    const apiResult = await fetch("https://developer.nps.gov/api/v1/parks?parkCode=" + park.parkCode + "&stateCode=WA&api_key=" + process.env.NPS_SECRET)
+    const jsonResult = await apiResult.json()
+    console.log(jsonResult)
+    park.parkDescription = jsonResult.data[0].description
     res.render('parks/show', { title: 'Park detail', park });
     }
     catch (error) {
