@@ -9,13 +9,13 @@ module.exports = {
 
 async function index(req, res) {
     const parks = await Park.find({});
-    res.render('parks/index', { title: 'All Parks', parks });
+    res.render('parks/index', { title: 'Parks', parks });
 };
 
 async function show(req, res) {
     try {
     const park = await Park.findById(req.params.id);
-    res.render('parks/show', { title: 'Park Detail', park });
+    res.render('parks/show', { title: 'Park detail', park });
     }
     catch (error) {
         console.log(error)
@@ -23,7 +23,7 @@ async function show(req, res) {
 };
 
 function newPark(req, res) {
-    res.render('parks/new', { title: 'Add Park', errorMsg: ''});
+    res.render('parks/new', { title: 'Add park', errorMsg: ''});
 };
 
 async function create(req, res) {

@@ -2,21 +2,10 @@
 
     <section id="show-page">
         <div>Park: </div>
-        <!-- <div><%= flight.airline %></div> -->
+
     </section>
 
-    <div>Ticket</div>
-    <ul>
-        <% tickets.forEach(t=> { %>
-            <li>
-                <%= t.seat %>
-            </li>
-            <li>
-                <%= t.price %>
-            </li>
-            <% }) %>
-    </ul>
-    <form id="redirect-to-new-ticket" action= '/parks/<%= park._id %>/parks/new' method="GET">
+    <form id="redirect-to-new-park" action= '/parks/<%= park._id %>/parks/new' method="GET">
         <button type="submit">Add Park</button>
     </form>
                 <%- include('../partials/footer') %>

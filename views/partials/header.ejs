@@ -11,7 +11,9 @@
 <body>
     <nav>
         <!-- <img> -->
+        <a href="/parks" <%- title === 'Parks' ? 'class="active"' : '' %>>Parks</a>
         <% if (user) { %>
+        <a href="/parks/new" <%- title === 'Add park' ? 'class="active"' : '' %>>Add park</a>
         <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ><%= user.name %>
           <a href="/logout">Log out</a>
         <% } else { %>
