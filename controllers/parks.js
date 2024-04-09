@@ -15,6 +15,7 @@ async function index(req, res) {
 async function show(req, res) {
     try {
     const park = await Park.findById(req.params.id);
+    
     res.render('parks/show', { title: 'Park detail', park });
     }
     catch (error) {
