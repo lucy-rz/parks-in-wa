@@ -2,18 +2,19 @@
 
 <table id="parks">
   <thead>
-    <tr>
-      <th>Park name</th>
-      <th>Park code</th>
-      <th>Image</th>
-    </tr>
+   <p>Some Parks</p>
   </thead>
   <tbody>
     <% parks.forEach(function(p) { %>
-      <tr>
-        <td><%= p.parkName %></td>
-        <td><%= p.parkCode %></td>
-        <td><a href="/parks/<%= p._id %>">Details</a></td>
+        <tr>
+            <td><img src= "<%= p.parkImage %>"></td>
+            <td><%= p.parkName %></td>
+            <td><%= p.parkCode %></td>
+        <td>
+            <% if (user) { %>
+            <a href="/parks/<%= p._id %>">Details</a>
+            <% } %>
+        </td>
       </tr>
       <% }); %>
     </tbody>

@@ -35,6 +35,8 @@ async function show(req, res) {
     const jsonResult = await apiResult.json()
     console.log(jsonResult)
     park.parkDescription = jsonResult.data[0].description
+    park.newImages = jsonResult.data[0].images
+    console.log(park.newImages)
     res.render('parks/show', { title: 'Park detail', park });
     }
     catch (error) {
