@@ -11,6 +11,10 @@
 <body>
     <nav>
         <!-- <img> -->
+        <form id="search-parks" action="/parks/search" method="GET">
+            <input type="string" name="search-string">  
+            <input type="submit" value="search">
+        </form>
         <a href="/parks" <%- title === 'Parks' ? 'class="active"' : '' %>>Parks</a>
         <% if (user) { %>
         <a href="/parks/new" <%- title === 'Add park' ? 'class="active"' : '' %>>Add park</a>

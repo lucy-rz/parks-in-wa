@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<%= title %>
+<table id="parks">
+    <thead>
+      <tr>
+        <th>Park name</th>
+        <th>Park code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% jsonSearch.data.forEach(function(p) { %>
+        <tr>
+          <td><%= p.fullName %></td>
+          <td><%= p.parkCode %></td>
+          <td><%= p.description %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+<%- include('../partials/footer') %>

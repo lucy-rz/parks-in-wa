@@ -6,7 +6,22 @@ module.exports = {
     show,
     new: newPark,
     create,
+    search,
 };
+
+async function search(req, res) {
+    console.log(req.query)
+    try {
+        const searchResult = await fetch("https://developer.nps.gov/api/v1/parks?stateCode=WA&q=" + req.query["search-string"] + "&api_key=" + process.env.NPS_SECRET)
+        const jsonSearch = await searchResult.json()
+        console.log(jsonSearch)
+        res.render('parks/search', { title: 'Search', jsonSearch})
+    }
+    catch (error) {
+        console.log(error)
+    }
+};
+
 
 async function index(req, res) {
     const parks = await Park.find({});
