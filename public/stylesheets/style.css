@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
 * {
     box-sizing: border-box;
     font-family: Helvetica;
     color: black;
+    font-family: "Tilt", sans-serif;
+}
+
+.top-title {
+    font-family: "Tilt", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 body {
+    font-family: "Tilt", sans-serif;
     margin: 0;
     height: 100vh;
     display: grid;
@@ -86,7 +96,7 @@ table {
 
 table thead th {
     padding: 5px;
-    border-bottom: 2px solid #424748;
+    border-bottom: 2px solid #94C973;
 }
 
 table td {
@@ -101,7 +111,7 @@ table td {
 
 #list a {
     border-radius: 4px;
-    background-color: #B8C0C2;
+    background-color: #94C973;
     padding: 4px;
     text-decoration: none;
     font-size: 14px;
