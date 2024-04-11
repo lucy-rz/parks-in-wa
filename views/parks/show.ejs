@@ -7,7 +7,12 @@
     </section>
     <section id="new-images">
         <% park.newImages.forEach(function(p) { %>
-           <div><img src="<%= p.url %>"></div>
+            <form method="POST" action="/parks/update">
+                <input type="hidden" name="parkId" value="<%= park._id %>">
+                <input type="hidden" name="parkImgUrl" value="<%= p.url %>">
+                <button><img src="<%= p.url %>"></button>
+
+             </form>
         <% }); %>
     </section>
 

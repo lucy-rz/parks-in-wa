@@ -7,6 +7,17 @@ module.exports = {
     new: newPark,
     create,
     search,
+    update,
+};
+
+async function update(req, res) {
+    try {
+        console.log(req.body)
+        await Park.findOneAndUpdate({ _id: req.body.parkId }, { parkImage: req.body.parkImgUrl } )
+        res.redirect(`/parks`)
+    } catch (error) {
+        console.log(error)
+    }
 };
 
 async function search(req, res) {

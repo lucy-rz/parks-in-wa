@@ -6,6 +6,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', parksCtrl.index);
 router.get('/new', ensureLoggedIn, parksCtrl.new);
 router.get('/search', parksCtrl.search);
+router.post('/update', ensureLoggedIn, parksCtrl.update);
 router.get('/:id', parksCtrl.show);
 router.post('/', ensureLoggedIn, parksCtrl.create);
 
