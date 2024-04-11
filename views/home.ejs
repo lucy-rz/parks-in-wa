@@ -2,5 +2,56 @@
 
 <h2>Parks in Washington - Home Page</h2>
 
+<div class="carrousel">
+
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1551404287-b7c87654a3a8?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+    </div>
+
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1584148721201-b6432e0d5106?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+    </div>
+
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1473442240418-452f03b7ae40?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+    </div>
+
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1472008104406-86f67006485b?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+    </div>
+
+    <div class="slide">
+        <img src="https://images.unsplash.com/photo-1600314481155-a831669deb00?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%">
+    </div>
+
+    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide")
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
+
+</script>
 
 <%- include('./partials/footer') %>
